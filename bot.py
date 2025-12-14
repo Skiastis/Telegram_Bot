@@ -2,7 +2,7 @@ import logging
 import os
 import requests
 from datetime import datetime, timedelta, time
-from telegram import Update, ForceReply, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Bot, Update, ForceReply, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, CallbackQueryHandler, filters
 
 # Configuration
@@ -23,7 +23,7 @@ COUNTRIES = [
     "المغرب", "تونس", "ليبيا", "السودان", "موريتانيا", "جيبوتي", "الصومال"
 ]
 # NOTE: You must ask the user for their token before running the bot.
-BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "8337412245:AAHEmWDg3EM2Hsu6aNgRWq45l1eAJXEJKSw")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 # Enable logging
 logging.basicConfig(
